@@ -1,0 +1,67 @@
+# Interval setting
+discriminator_train_start_steps: 100000 # Number of steps to start to train discriminator.
+train_max_steps: 600000                 # Number of pre-training steps.
+save_interval_steps: 100000             # Interval steps to save checkpoint.
+eval_interval_steps: 2000               # Interval steps to evaluate the network.
+log_interval_steps: 2000                # Interval steps to record the training log.
+resume:                                 # Epoch to resume training.
+
+# Loss balancing coefficients.
+lambda_stft: 1.0
+lambda_source: 1.0
+lambda_adv: 4.0
+lambda_feat_match: 0.0
+
+# Multi-resolution STFT loss setting
+stft_loss:
+  _target_: usfgan.losses.MultiResolutionSTFTLoss
+  fft_sizes: [1024, 2048, 512]   # List of FFT size for STFT-based loss.
+  hop_sizes: [120, 240, 50]      # List of hop size for STFT-based loss
+  win_lengths: [600, 1200, 240]  # List of window length for STFT-based loss.
+  window: hann_window            # Window function for STFT-based loss
+
+# Source regularization loss setting
+source_loss:
+  _target_: usfgan.losses.FlattenLoss
+  sampling_rate: 24000  # Sampling rate.
+  fft_size: 2048        # FFT size.
+  hop_size: 120         # Hop size.
+  f0_floor: 70          # Minimum F0.
+  f0_ceil: 340          # Maximum F0.
+  power: false          # Whether to use power or magnitude spectrogram.
+  elim_0th: false       # Whether to exclude 0th components of cepstrums in
+                        # CheapTrick estimation. If set to true, source-network
+                        # is forced to estimate the power of the output signal.
+  l2_norm: false        # Whether to use L1 or L2 norm.
+
+# Adversarial loss setting
+adversarial_loss:
+  _target_: usfgan.losses.AdversarialLoss
+
+# Feature matching loss setting
+feat_match_loss:
+  _target_: usfgan.losses.FeatureMatchLoss
+
+# Optimizer setting
+generator_optimizer:
+  _target_: usfgan.optimizers.RAdam
+  lr: 0.0001                 # Generator's learning rate.
+  eps: 1.0e-6                # Generator's epsilon.
+  weight_decay: 0.0          # Generator's weight decay coefficient.
+generator_scheduler:
+  _target_: torch.optim.lr_scheduler.StepLR
+  step_size: 200000          # Generator's scheduler step size.
+  gamma: 0.5                 # Generator's scheduler gamma.
+                             # At each step size, lr will be multiplied by this parameter.
+generator_grad_norm: 10      # Generator's gradient norm.
+discriminator_optimizer:
+  _target_: usfgan.optimizers.RAdam
+  lr: 0.00005                # Discriminator's learning rate.
+  eps: 1.0e-6                # Discriminator's epsilon.
+  weight_decay: 0.0          # Discriminator's weight decay coefficient.
+discriminator_scheduler:
+  _target_: torch.optim.lr_scheduler.StepLR
+  step_size: 200000          # Discriminator's scheduler step size.
+  gamma: 0.5                 # Discriminator's scheduler gamma.
+                             # At each step size, lr will be multiplied by this parameter.
+discriminator_grad_norm: 10  # Discriminator's gradient norm.

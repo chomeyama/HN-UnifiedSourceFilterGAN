@@ -1,0 +1,440 @@
+p225:
+  f0_min: 130
+  f0_max: 260
+  pow_th: -20
+p226:
+  f0_min: 80
+  f0_max: 180
+  pow_th: -20
+p227:
+  f0_min: 80
+  f0_max: 190
+  pow_th: -20
+p228:
+  f0_min: 120
+  f0_max: 300
+  pow_th: -20
+p229:
+  f0_min: 140
+  f0_max: 230
+  pow_th: -20
+p230:
+  f0_min: 140
+  f0_max: 260
+  pow_th: -20
+p231:
+  f0_min: 110
+  f0_max: 280
+  pow_th: -20
+p232:
+  f0_min: 70
+  f0_max: 180
+  pow_th: -20
+p233:
+  f0_min: 150
+  f0_max: 290
+  pow_th: -20
+p234:
+  f0_min: 130
+  f0_max: 270
+  pow_th: -20
+p236:
+  f0_min: 170
+  f0_max: 330
+  pow_th: -20
+p237:
+  f0_min: 60
+  f0_max: 120
+  pow_th: -20
+p238:
+  f0_min: 140
+  f0_max: 320
+  pow_th: -20
+p239:
+  f0_min: 140
+  f0_max: 270
+  pow_th: -20
+p240:
+  f0_min: 150
+  f0_max: 330
+  pow_th: -20
+p241:
+  f0_min: 85
+  f0_max: 170
+  pow_th: -20
+p243:
+  f0_min: 80
+  f0_max: 180
+  pow_th: -20
+p244:
+  f0_min: 150
+  f0_max: 320
+  pow_th: -20
+p245:
+  f0_min: 70
+  f0_max: 130
+  pow_th: -20
+p246:
+  f0_min: 70
+  f0_max: 140
+  pow_th: -20
+p247:
+  f0_min: 90
+  f0_max: 200
+  pow_th: -20
+p248:
+  f0_min: 130
+  f0_max: 390
+  pow_th: -20
+p249:
+  f0_min: 130
+  f0_max: 240
+  pow_th: -20
+p250:
+  f0_min: 110
+  f0_max: 380
+  pow_th: -20
+p251:
+  f0_min: 80
+  f0_max: 170
+  pow_th: -20
+p252:
+  f0_min: 80
+  f0_max: 160
+  pow_th: -20
+p253:
+  f0_min: 160
+  f0_max: 310
+  pow_th: -20
+p254:
+  f0_min: 55
+  f0_max: 120
+  pow_th: -20
+p255:
+  f0_min: 95
+  f0_max: 210
+  pow_th: -20
+p256:
+  f0_min: 60
+  f0_max: 130
+  pow_th: -20
+p257:
+  f0_min: 150
+  f0_max: 300
+  pow_th: -20
+p258:
+  f0_min: 90
+  f0_max: 170
+  pow_th: -20
+p259:
+  f0_min: 80
+  f0_max: 200
+  pow_th: -20
+p260:
+  f0_min: 70
+  f0_max: 170
+  pow_th: -20
+p261:
+  f0_min: 140
+  f0_max: 360
+  pow_th: -20
+p262:
+  f0_min: 120
+  f0_max: 250
+  pow_th: -20
+p263:
+  f0_min: 70
+  f0_max: 160
+  pow_th: -20
+p264:
+  f0_min: 150
+  f0_max: 250
+  pow_th: -20
+p265:
+  f0_min: 130
+  f0_max: 290
+  pow_th: -20
+p266:
+  f0_min: 100
+  f0_max: 300
+  pow_th: -20
+p267:
+  f0_min: 130
+  f0_max: 270
+  pow_th: -20
+p268:
+  f0_min: 130
+  f0_max: 300
+  pow_th: -20
+p269:
+  f0_min: 150
+  f0_max: 260
+  pow_th: -20
+p270:
+  f0_min: 75
+  f0_max: 150
+  pow_th: -20
+p271:
+  f0_min: 90
+  f0_max: 160
+  pow_th: -20
+p272:
+  f0_min: 80
+  f0_max: 180
+  pow_th: -20
+p273:
+  f0_min: 100
+  f0_max: 220
+  pow_th: -20
+p274:
+  f0_min: 75
+  f0_max: 150
+  pow_th: -20
+p275:
+  f0_min: 80
+  f0_max: 160
+  pow_th: -20
+p276:
+  f0_min: 170
+  f0_max: 340
+  pow_th: -20
+p277:
+  f0_min: 160
+  f0_max: 260
+  pow_th: -20
+p278:
+  f0_min: 80
+  f0_max: 170
+  pow_th: -20
+p279:
+  f0_min: 80
+  f0_max: 200
+  pow_th: -20
+p280:
+  f0_min: 140
+  f0_max: 280
+  pow_th: -20
+p281:
+  f0_min: 70
+  f0_max: 140
+  pow_th: -20
+p282:
+  f0_min: 150
+  f0_max: 250
+  pow_th: -20
+p283:
+  f0_min: 160
+  f0_max: 280
+  pow_th: -20
+p284:
+  f0_min: 60
+  f0_max: 170
+  pow_th: -20
+p285:
+  f0_min: 80
+  f0_max: 180
+  pow_th: -20
+p286:
+  f0_min: 90
+  f0_max: 210
+  pow_th: -20
+p287:
+  f0_min: 65
+  f0_max: 140
+  pow_th: -20
+p288:
+  f0_min: 130
+  f0_max: 300
+  pow_th: -20
+p292:
+  f0_min: 70
+  f0_max: 170
+  pow_th: -20
+p293:
+  f0_min: 130
+  f0_max: 260
+  pow_th: -20
+p294:
+  f0_min: 120
+  f0_max: 260
+  pow_th: -20
+p295:
+  f0_min: 140
+  f0_max: 260
+  pow_th: -20
+p297:
+  f0_min: 120
+  f0_max: 300
+  pow_th: -20
+p298:
+  f0_min: 80
+  f0_max: 190
+  pow_th: -20
+p299:
+  f0_min: 110
+  f0_max: 270
+  pow_th: -20
+p300:
+  f0_min: 130
+  f0_max: 270
+  pow_th: -20
+p301:
+  f0_min: 120
+  f0_max: 250
+  pow_th: -20
+p302:
+  f0_min: 90
+  f0_max: 180
+  pow_th: -20
+p303:
+  f0_min: 160
+  f0_max: 300
+  pow_th: -20
+p304:
+  f0_min: 65
+  f0_max: 160
+  pow_th: -20
+p305:
+  f0_min: 160
+  f0_max: 330
+  pow_th: -20
+p306:
+  f0_min: 130
+  f0_max: 260
+  pow_th: -20
+p307:
+  f0_min: 160
+  f0_max: 400
+  pow_th: -20
+p308:
+  f0_min: 140
+  f0_max: 280
+  pow_th: -20
+p310:
+  f0_min: 170
+  f0_max: 350
+  pow_th: -20
+p311:
+  f0_min: 75
+  f0_max: 160
+  pow_th: -20
+p312:
+  f0_min: 130
+  f0_max: 280
+  pow_th: -20
+p313:
+  f0_min: 120
+  f0_max: 260
+  pow_th: -20
+p314:
+  f0_min: 120
+  f0_max: 270
+  pow_th: -20
+p315:
+  f0_min: 90
+  f0_max: 190
+  pow_th: -20
+p316:
+  f0_min: 65
+  f0_max: 140
+  pow_th: -20
+p317:
+  f0_min: 175
+  f0_max: 360
+  pow_th: -20
+p318:
+  f0_min: 110
+  f0_max: 290
+  pow_th: -20
+p323:
+  f0_min: 130
+  f0_max: 390
+  pow_th: -20
+p326:
+  f0_min: 50
+  f0_max: 110
+  pow_th: -20
+p329:
+  f0_min: 150
+  f0_max: 280
+  pow_th: -20
+p330:
+  f0_min: 140
+  f0_max: 270
+  pow_th: -20
+p333:
+  f0_min: 120
+  f0_max: 270
+  pow_th: -20
+p334:
+  f0_min: 65
+  f0_max: 140
+  pow_th: -20
+p335:
+  f0_min: 130
+  f0_max: 310
+  pow_th: -20
+p336:
+  f0_min: 130
+  f0_max: 310
+  pow_th: -20
+p339:
+  f0_min: 120
+  f0_max: 310
+  pow_th: -20
+p340:
+  f0_min: 170
+  f0_max: 270
+  pow_th: -20
+p341:
+  f0_min: 130
+  f0_max: 280
+  pow_th: -20
+p343:
+  f0_min: 110
+  f0_max: 240
+  pow_th: -20
+p345:
+  f0_min: 70
+  f0_max: 140
+  pow_th: -20
+p347:
+  f0_min: 60
+  f0_max: 130
+  pow_th: -20
+p351:
+  f0_min: 170
+  f0_max: 280
+  pow_th: -20
+p360:
+  f0_min: 70
+  f0_max: 160
+  pow_th: -20
+p361:
+  f0_min: 120
+  f0_max: 290
+  pow_th: -20
+p362:
+  f0_min: 130
+  f0_max: 300
+  pow_th: -20
+p363:
+  f0_min: 70
+  f0_max: 180
+  pow_th: -20
+p364:
+  f0_min: 65
+  f0_max: 145
+  pow_th: -20
+p374:
+  f0_min: 70
+  f0_max: 190
+  pow_th: -20
+p376:
+  f0_min: 70
+  f0_max: 170
+  pow_th: -20
+s5:
+  f0_min: 140
+  f0_max: 340
+  pow_th: -20

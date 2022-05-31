@@ -1,0 +1,20 @@
+# @package _global_
+
+defaults:
+  - generator: parallel_hn_usfgan
+  - data: vctk_24kHz
+
+hydra:
+  job:
+    chdir: false
+  output_subdir: null
+  job_logging:
+    formatters:
+      simple:
+        format: '[%(levelname)s][%(module)s | %(lineno)s] %(message)s'
+
+out_dir:             # Directory to output decoding results.
+checkpoint_path:     # Path to the checkpoint of pre-trained model.
+f0_factor: 1.00      # F0 factor.
+seed: 100            # Seed number for random numbers.
+save_source: false   # Whether to save source excitation signals.

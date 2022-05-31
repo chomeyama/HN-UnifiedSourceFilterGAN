@@ -1,0 +1,8 @@
+__pycache__
+.eggs
+*.egg-info
+*.log
+*.out
+.venv
+
+egs/vctk/exp/

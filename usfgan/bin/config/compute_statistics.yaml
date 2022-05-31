@@ -1,0 +1,14 @@
+# @package _global_
+
+hydra:
+  job:
+    chdir: false
+  output_subdir: null
+  job_logging:
+    formatters:
+      simple:
+        format: '[%(levelname)s][%(module)s | %(lineno)s] %(message)s'
+
+feats: data/scp/vctk_train_24kHz.list         # List file of input features.
+stats: data/stats/vctk_train_24kHz.joblib     # Path to file to output statistics.
+feat_types: ['f0', 'contf0', 'mcep', 'mcap']  # Feature types.
