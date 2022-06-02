@@ -2,7 +2,7 @@
 
 
 This repo provides official PyTorch implementation of [HN-uSFGAN](https://arxiv.org/abs/2205.06053), a high-fidelity and pitch controllable neural vocoder based on unifid source-filter networks.<br>
-HN-uSFGAN is an extended model of [uSFGAN](https://arxiv.org/abs/2104.04668), and this repo includes the original [uSFGAN](https://github.com/chomeyama/UnifiedSourceFilterGAN) implementation with some modifications.<br>
+HN-uSFGAN is an extended model of [uSFGAN](https://arxiv.org/abs/2104.04668), and this repo includes the original [uSFGAN implementation](https://github.com/chomeyama/UnifiedSourceFilterGAN)  with some modifications.<br>
 
 This repository is tested on the following condition.
 
@@ -19,7 +19,7 @@ $ cd HN-UnifiedSourceFilterGAN
 $ pip install -e .
 ```
 
-Please refer to the [PWG](https://github.com/kan-bayashi/ParallelWaveGAN) repo for more details.
+Please refer to the [Parallel WaveGAN](https://github.com/kan-bayashi/ParallelWaveGAN) repo for more details.
 
 ## Folder architecture
 - **egs**:
@@ -31,13 +31,14 @@ The folder of the source codes.
 
 ## Run
 
-In this repo, parameters are managed using [Hydra](https://hydra.cc/docs/intro/).<br>
+In this repo, hyperparameters are managed using [Hydra](https://hydra.cc/docs/intro/).<br>
 Hydra provides an easy way to dynamically create a hierarchical configuration by composition and override it through config files and the command line.
 
 ### Dataset preparation
 
-Create corpus and scp/list files denoting path to the audio according to your own dataset path.<br>
-An example of the training scp/list files are provided under `egs/vctk/data/scp/` directory in this repo.
+Make dataset and scp files denoting paths to each audio files according to your own dataset (E.g., `egs/vctk/data/scp/vctk_train_24kHz.scp`).<br>
+Also, list files denoting paths to the features extracted in the next step are required (E.g., `egs/vctk/data/scp/vctk_train_24kHz.list`).<br>
+Note that scp/list files for each training/validation/evaluation are needed.
 
 ### Preprocessing
 
@@ -56,8 +57,8 @@ $ usfgan-compute-statistics feats=data/scp/vctk_train_24kHz.list stats=data/stat
 ### Training
 
 ```bash
-# Train a model
-# Parallel-HN-uSFGAN generator with HiFiGAN discriminator would show best performance
+# Train a model customizing the hyperparameters as you like
+# The following setting of Parallel-HN-uSFGAN generator with HiFiGAN discriminator would show best performance
 $ usfgan-train generator=parallel_hn_usfgan discriminator=hifigan train=hn_usfgan data=vctk_24kHz out_dir=exp/parallel_hn_usfgan
 ```
 

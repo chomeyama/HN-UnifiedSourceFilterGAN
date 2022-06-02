@@ -40,7 +40,7 @@ def main(config: DictConfig) -> None:
     torch.cuda.manual_seed(config.seed)
     os.environ["PYTHONHASHSEED"] = str(config.seed)
 
-    # setup model
+    # set device
     if torch.cuda.is_available():
         device = torch.device("cuda")
     else:
@@ -114,7 +114,6 @@ def main(config: DictConfig) -> None:
                 wav_filename = f"{utt_id}.wav"
             else:  # scaled f0
                 wav_filename = f"{utt_id}_f{config.f0_factor:.2f}.wav"
-            print(wav_filename)
             sf.write(
                 os.path.join(out_dir, wav_filename),
                 y.view(-1).cpu().numpy(),
