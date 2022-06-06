@@ -4,6 +4,8 @@
 This repo provides official PyTorch implementation of [HN-uSFGAN](https://arxiv.org/abs/2205.06053), a high-fidelity and pitch controllable neural vocoder based on unifid source-filter networks.<br>
 HN-uSFGAN is an extended model of [uSFGAN](https://arxiv.org/abs/2104.04668), and this repo includes the original [uSFGAN implementation](https://github.com/chomeyama/UnifiedSourceFilterGAN)  with some modifications.<br>
 
+For more information, please see the [demo](https://chomeyama.github.io/HN-UnifiedSourceFilterGAN-Demo/).
+
 This repository is tested on the following condition.
 
 - Ubuntu 20.04.3 LTS
