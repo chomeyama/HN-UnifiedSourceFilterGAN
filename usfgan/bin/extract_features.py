@@ -41,15 +41,15 @@ def path_create(wav_list, in_dir, out_dir, extname):
 
 
 def path_replace(filepath, inputpath, outputpath, extname=None):
+    if extname is not None:
+        filepath = f"{filepath.split('.')[0]}.{extname}"
     filepath = filepath.replace(inputpath, outputpath)
     if not os.path.exists(os.path.dirname(filepath)):
         os.makedirs(os.path.dirname(filepath))
-    if extname is not None:
-        filepath = f"{filepath.split('.')[0]}.{extname}"
     return filepath
 
 
-def spk_division(file_list, config, spkinfo, split="/", spkidx=-2):
+def spk_division(file_list, config, spkinfo, split="/"):
     """Divide list into speaker-dependent list
 
     Args:
@@ -58,7 +58,6 @@ def spk_division(file_list, config, spkinfo, split="/", spkidx=-2):
         spkinfo (dict): Dictionary of
             speaker-dependent f0 range and power threshold
         split: Path split string
-        spkidx: Speaker index of the split path
 
     Return:
         (list): List of divided file lists
@@ -68,7 +67,7 @@ def spk_division(file_list, config, spkinfo, split="/", spkidx=-2):
     file_lists, configs, tempf = [], [], []
     prespk = None
     for file in file_list:
-        spk = file.split(split)[spkidx]
+        spk = file.split(split)[config.spkidx]
         if spk != prespk:
             if tempf:
                 file_lists.append(tempf)
@@ -234,11 +233,11 @@ def melfilterbank(
     fmin = 0 if fmin is None else fmin
     fmax = sampling_rate / 2 if fmax is None else fmax
     mel_basis = librosa.filters.mel(
-        sampling_rate,
-        fft_size,
-        num_mels,
-        fmin,
-        fmax,
+        sr=sampling_rate,
+        n_fft=fft_size,
+        n_mels=num_mels,
+        fmin=fmin,
+        fmax=fmax,
     )
 
     return np.dot(spc, mel_basis.T)

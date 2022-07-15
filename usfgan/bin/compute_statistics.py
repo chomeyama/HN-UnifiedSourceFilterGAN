@@ -17,7 +17,7 @@ from logging import getLogger
 import hydra
 import numpy as np
 from hydra.utils import to_absolute_path
-from joblib import dump
+from joblib import dump, load
 from omegaconf import DictConfig, OmegaConf
 from sklearn.preprocessing import StandardScaler
 from usfgan.utils import read_hdf5, read_txt
@@ -34,7 +34,7 @@ def calc_stats(file_list, config):
     """
 
     # define scalers
-    scaler = {}
+    scaler = load(config.stats) if os.path.isfile(config.stats) else {}
     for feat_type in config.feat_types:
         if feat_type == "uv":
             continue
