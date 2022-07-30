@@ -35,7 +35,7 @@ requirements = {
         "pyworld>=0.2.12",
         "sprocket-vc",
         "protobuf<=3.19.0",
-        "hydra-core>=1.1",
+        "hydra-core>=1.2",
     ],
     "setup": [
         "numpy",
