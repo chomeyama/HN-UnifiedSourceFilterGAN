@@ -83,13 +83,13 @@ $ tensorboard --logdir exp
 If you find the code is helpful, please cite the following article.
 
 ```
-@misc{https://doi.org/10.48550/arxiv.2205.06053,
-  doi = {10.48550/ARXIV.2205.06053},
-  url = {https://arxiv.org/abs/2205.06053},
-  author = {Yoneyama, Reo and Wu, Yi-Chiao and Toda, Tomoki},
-  publisher = {arXiv},
-  year = {2022},
-  copyright = {arXiv.org perpetual, non-exclusive license}
+@inproceedings{yoneyama22_interspeech,
+  author={Reo Yoneyama and Yi-Chiao Wu and Tomoki Toda},
+  title={{Unified Source-Filter GAN with Harmonic-plus-Noise Source Excitation Generation}},
+  year=2022,
+  booktitle={Proc. Interspeech 2022},
+  pages={848--852},
+  doi={10.21437/Interspeech.2022-11130}
 }
 ```
 
