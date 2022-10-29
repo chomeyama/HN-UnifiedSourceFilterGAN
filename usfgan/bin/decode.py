@@ -11,6 +11,7 @@ References:
 
 """
 
+import logging
 import os
 from logging import getLogger
 from time import time
@@ -30,7 +31,7 @@ from usfgan.utils.features import SignalGenerator
 logger = getLogger(__name__)
 
 
-@hydra.main(config_path="config", config_name="decode")
+@hydra.main(version_base=None, config_path="config", config_name="decode")
 def main(config: DictConfig) -> None:
     """Run decoding process."""
 
@@ -47,15 +48,11 @@ def main(config: DictConfig) -> None:
         device = torch.device("cpu")
 
     # load pre-trained model from checkpoint file
-    model = {
-        "generator": hydra.utils.instantiate(config.generator),
-    }
-    model["generator"].load_state_dict(
-        torch.load(to_absolute_path(config.checkpoint_path))["model"]["generator"]
-    )
+    model = hydra.utils.instantiate(config.generator)
+    model.load_state_dict(torch.load(to_absolute_path(config.checkpoint_path))["model"]["generator"])
     logger.info(f"Loaded model parameters from {config.checkpoint_path}.")
-    model["generator"].remove_weight_norm()
-    model["generator"] = model["generator"].eval().to(device)
+    model.remove_weight_norm()
+    model.eval().to(device)
 
     # check directory existence
     out_dir = to_absolute_path(config.out_dir)
@@ -103,17 +100,14 @@ def main(config: DictConfig) -> None:
 
             # generate
             start = time()
-            y, s = model["generator"](in_signal, c, df)[:2]
+            y, s = model(in_signal, c, df)[:2]
             rtf = (time() - start) / (y.size(-1) / config.data.sample_rate)
             pbar.set_postfix({"RTF": rtf})
             total_rtf += rtf
 
             # save output signal as PCM 16 bit wav file
             utt_id = os.path.splitext(os.path.basename(feat_path))[0]
-            if config.f0_factor == 1.0:
-                wav_filename = f"{utt_id}.wav"
-            else:  # scaled f0
-                wav_filename = f"{utt_id}_f{config.f0_factor:.2f}.wav"
+            wav_filename = f"{utt_id}_f{config.f0_factor:.2f}.wav"
             sf.write(
                 os.path.join(out_dir, wav_filename),
                 y.view(-1).cpu().numpy(),
@@ -134,9 +128,7 @@ def main(config: DictConfig) -> None:
                 )
 
     # report average RTF
-    logger.info(
-        f"Finished generation of {idx} utterances (RTF = {total_rtf / idx:.03f})."
-    )
+    logger.info(f"Finished generation of {idx} utterances (RTF = {total_rtf / idx:.03f}).")
 
 
 if __name__ == "__main__":

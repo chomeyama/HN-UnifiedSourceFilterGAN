@@ -29,8 +29,7 @@ def pd_indexing(x, d, dilation, batch_index, ch_index):
 
     # get past index
     idxP = torch.arange(-batch_length, 0).float()
-    if torch.cuda.is_available():
-        idxP = idxP.cuda()
+    idxP = idxP.to(x.device)
     idxP = torch.add(-dilations, idxP)
     idxP = idxP.round().long()
     maxP = -((torch.min(idxP) + batch_length))
@@ -41,8 +40,7 @@ def pd_indexing(x, d, dilation, batch_index, ch_index):
 
     # get future index
     idxF = torch.arange(0, batch_length).float()
-    if torch.cuda.is_available():
-        idxF = idxF.cuda()
+    idxF = idxF.to(x.device)
     idxF = torch.add(dilations, idxF)
     idxF = idxF.round().long()
     maxF = torch.max(idxF) - (batch_length - 1)

@@ -193,7 +193,7 @@ class CascadeHnUSFGANGenerator(nn.Module):
             "cascade_mode": 0,
         },
         periodicity_estimator_params={
-            "conv_blocks": 3,
+            "conv_layers": 3,
             "kernel_size": 5,
             "dilation": 1,
             "padding_mode": "replicate",
@@ -383,7 +383,7 @@ class ParallelHnUSFGANGenerator(nn.Module):
             "cascade_mode": 0,
         },
         periodicity_estimator_params={
-            "conv_blocks": 3,
+            "conv_layers": 3,
             "kernel_size": 5,
             "dilation": 1,
             "padding_mode": "replicate",

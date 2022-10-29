@@ -353,7 +353,7 @@ def melf0_feature_extract(queue, wav_list, config, eps=1e-7):
     queue.put("Finish")
 
 
-@hydra.main(config_path="config", config_name="extract_features")
+@hydra.main(version_base=None, config_path="config", config_name="extract_features")
 def main(config: DictConfig):
     # show argument
     logger.info(OmegaConf.to_yaml(config))

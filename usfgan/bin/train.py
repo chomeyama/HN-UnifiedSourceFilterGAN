@@ -664,7 +664,7 @@ class Collater(object):
         assert len(x) == len(contf0) * self.hop_size
 
 
-@hydra.main(config_path="config", config_name="train")
+@hydra.main(version_base=None, config_path="config", config_name="train")
 def main(config: DictConfig) -> None:
     """Run training process."""
 

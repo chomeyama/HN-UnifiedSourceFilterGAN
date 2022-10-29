@@ -1,6 +1,7 @@
 # @package _global_
 
 defaults:
+  - _self_
   - generator: parallel_hn_usfgan
   - discriminator: hifigan
   - train: hn_usfgan

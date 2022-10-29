@@ -62,7 +62,7 @@ def calc_stats(file_list, config):
     logger.info(f"Successfully saved statistics to {config.stats}.")
 
 
-@hydra.main(config_path="config", config_name="compute_statistics")
+@hydra.main(version_base=None, config_path="config", config_name="compute_statistics")
 def main(config: DictConfig):
     # show argument
     logger.info(OmegaConf.to_yaml(config))
