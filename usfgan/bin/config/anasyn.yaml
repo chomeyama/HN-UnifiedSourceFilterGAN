@@ -1,0 +1,37 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - generator: parallel_hn_usfgan
+
+hydra:
+  run:
+    dir: ./
+  output_subdir: null
+  job_logging:
+    formatters:
+      simple:
+        format: '[%(asctime)s][%(levelname)s][%(module)s | %(lineno)s] %(message)s'
+    disable_existing_loggers: false
+
+in_dir:                          # Path to directory which include wav files you want to process.
+out_dir:                         # Path to directory to save the synthesized wavs.
+f0_factor: 1.00                  # F0 scaling factor.
+seed: 100                        # Seed number for random numbers.
+stats: pretrained_model/stats/vctk_train_24kHz.joblib  # Path to statistics file.
+checkpoint_path: pretrained_model/checkpoint-600000steps.pkl  # Path to pre-trained model.
+
+# The same parametes should be set as in the training.
+sample_rate: 24000               # Sampling rate.
+frame_period: 5                  # Frameshift in ms.
+f0_floor: 70                     # Minimum F0 for WORLD F0 analysis.
+f0_ceil: 500                     # Maximum F0 for WORLD F0 analysis.
+mcep_dim: 40                     # Number of dimension of MGC.
+mcap_dim: 20                     # Number of dimension of mel-cepstral AP.
+aux_feats: ["mcep", "mcap"]      # Input acoustic features.
+dense_factor: 4                  # Dense factor in PDCNNs.
+df_f0_type: "contf0"             # F0 type for dilation factor ("f0" or "cf0").
+sine_amp: 0.1                    # Sine amplitude.
+noise_amp: 0.003                 # Noise amplitude.
+sine_f0_type: "contf0"           # F0 type for sine signal ("f0" or "cf0").
+signal_types: ["sine", "noise"]  # List of input signal types.
